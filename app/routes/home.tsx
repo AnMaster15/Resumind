@@ -39,12 +39,21 @@ export default function Home() {
     loadResumes()
   }, []);
 
+<section style={{ marginBottom: "2rem" }}>
+  <h1>AI Resume Analyzer</h1>
+  <p>
+    Instantly analyze your resume for ATS compatibility, get AI-powered feedback, and improve your chances of landing your dream job.
+  </p>
+</section>
+
   return <main className="bg-[url('/images/bg-main.svg')] bg-cover">
     <Navbar />
 
     <section className="main-section">
       <div className="page-heading py-16">
-        <h1>Track Your Applications & Resume Ratings</h1>
+       <h1>Welcome to Resumind</h1>
+       <h2>Get instant, actionable feedback on your resume and boost your job search success.</h2>
+
         {!loadingResumes && resumes?.length === 0 ? (
             <h2>No resumes found. Upload your first resume to get feedback.</h2>
         ): (

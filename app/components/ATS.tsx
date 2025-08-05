@@ -51,19 +51,22 @@ const ATS: React.FC<ATSProps> = ({ score, suggestions }) => {
 
         {/* Suggestions list */}
         <div className="space-y-3">
-          {suggestions.map((suggestion, index) => (
-            <div key={index} className="flex items-start gap-3">
-              <img
-                src={suggestion.type === "good" ? "/icons/check.svg" : "/icons/warning.svg"}
-                alt={suggestion.type === "good" ? "Check" : "Warning"}
-                className="w-5 h-5 mt-1"
-              />
-              <p className={suggestion.type === "good" ? "text-green-700" : "text-amber-700"}>
-                {suggestion.tip}
-              </p>
-            </div>
-          ))}
-        </div>
+        {(suggestions.length > 0 ? suggestions : [
+          { type: "good", tip: "Clear formatting helps ATS parsing." },
+          { type: "improve", tip: "Add more relevant keywords from the job description." }
+        ]).map((suggestion, index) => (
+          <div key={index} className="flex items-start gap-3">
+            <img
+              src={suggestion.type === "good" ? "/icons/check.svg" : "/icons/warning.svg"}
+              alt={suggestion.type === "good" ? "Check" : "Warning"}
+              className="w-5 h-5 mt-1"
+            />
+            <p className={suggestion.type === "good" ? "text-green-700" : "text-amber-700"}>
+              {suggestion.tip}
+            </p>
+          </div>
+        ))}
+      </div>
       </div>
 
       {/* Closing encouragement */}

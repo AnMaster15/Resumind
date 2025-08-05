@@ -91,21 +91,21 @@ const Upload = () => {
                             <img src="/images/resume-scan.gif" className="w-full" />
                         </>
                     ) : (
-                        <h2>Drop your resume for an ATS score and improvement tips</h2>
+                        <h2>Upload your resume PDF and get a detailed AI review in seconds!</h2>
                     )}
                     {!isProcessing && (
                         <form id="upload-form" onSubmit={handleSubmit} className="flex flex-col gap-4 mt-8">
                             <div className="form-div">
                                 <label htmlFor="company-name">Company Name</label>
-                                <input type="text" name="company-name" placeholder="Company Name" id="company-name" />
+                                <input type="text" name="company-name" placeholder="e.g. Google" id="company-name" />
                             </div>
                             <div className="form-div">
                                 <label htmlFor="job-title">Job Title</label>
-                                <input type="text" name="job-title" placeholder="Job Title" id="job-title" />
+                                <input type="text" name="job-title" placeholder="e.g. Frontend Developer" id="job-title" />
                             </div>
                             <div className="form-div">
                                 <label htmlFor="job-description">Job Description</label>
-                                <textarea rows={5} name="job-description" placeholder="Job Description" id="job-description" />
+                                <textarea rows={5} name="job-description" placeholder="Paste the job description here (optional)" id="job-description" />
                             </div>
 
                             <div className="form-div">
