@@ -380,6 +380,7 @@ export const usePuterStore = create<PuterStore>((set, get) => {
         }
         return puter.kv.set(key, value);
     };
+    
 
     const deleteKV = async (key: string) => {
         const puter = getPuter();
